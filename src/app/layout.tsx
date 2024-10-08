@@ -3,7 +3,7 @@ import Cabecalho  from "@/components/Cabecalho";
 import localFont from "next/font/local";
 import "./globals.css";
 import Rodape from "@/components/Rodape";
-import CadMecanico from "@/CadMecanico/page";
+import CadMecanico from "@/app/api/CadMecanico/page";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",

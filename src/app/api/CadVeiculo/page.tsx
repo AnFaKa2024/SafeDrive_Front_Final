@@ -2,8 +2,8 @@ import RodapeCad from "@/components/RodapeCad";
 import DadosVeiculo from "@/DadosVeiculo";
 import Filtro from "@/Filtro";
 import Fluido from "@/Fluido";
-import Historico from "@/Historico/page";
-import Observacao from "@/Relatos/Obs";
+import Historico from "@/app/api/Historico/page";
+import Observacao from "@/app/api/Relatos/Obs";
 import Cabecalho from "@/components/Cabecalho";
 import { HeaderVec } from "@/styled";
 

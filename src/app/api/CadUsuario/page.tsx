@@ -2,7 +2,7 @@ import Cabecalho from "@/components/Cabecalho";
 import RodapeCad from "@/components/RodapeCad";
 import DadosCondutor from "./DadosCondutor";
 import DadosPessoais from "./DadosPessoais";
-import ObsUser from "@/CadUsuario/ObsUser";
+import ObsUser from "@/app/api/CadUsuario/ObsUser";
 
 
 
