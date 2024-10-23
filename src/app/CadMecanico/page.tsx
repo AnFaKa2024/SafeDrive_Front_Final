@@ -20,7 +20,7 @@ export default function CadMecanico(){
       </HeaderVec>
       
         <CadMeca/>
-        <br />
+        
         <CadOficina/>
      
       

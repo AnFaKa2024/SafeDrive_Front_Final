@@ -9,8 +9,6 @@ export default function Home(){
     {/*  esse principal = cabeçalho  principal*/}
       <Principal/> 
       <Corpo/>
-      <br/>
-      <br/>
       <Rodape/>
        
     </>

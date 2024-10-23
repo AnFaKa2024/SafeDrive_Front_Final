@@ -19,6 +19,9 @@ export type PessoaisProps ={
 export type NovoCondProps ={
   name: string;
   value: string | ' ';
+  email: string;
+ 
+
 }
 
 export type ObsUserProps ={

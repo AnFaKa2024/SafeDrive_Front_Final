@@ -3,7 +3,7 @@ import Cabecalho  from "@/components/Cabecalho";
 import localFont from "next/font/local";
 import "./globals.css";
 import Rodape from "@/components/Rodape";
-import CadMecanico from "@/app/api/CadMecanico/page";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,7 +32,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Cabecalho/>
-        {CadMecanico}
+        {children}
         <Rodape/>
       </body>
     </html>
