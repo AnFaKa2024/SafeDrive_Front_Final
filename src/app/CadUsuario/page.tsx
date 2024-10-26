@@ -1,6 +1,5 @@
 "use client"
 
-import Cabecalho from "@/components/Cabecalho";
 import RodapeCad from "@/components/RodapeCad";
 import DadosCondutor from "./DadosCondutor";
 import DadosPessoais from "./DadosPessoais";
@@ -26,37 +25,36 @@ export default function CadUsuario(){
     
   return(
     <>
-      <Cabecalho/>
-      <head>
-        <title>SAFE DRIVE - CADASTRO USUÁRIO</title>
-      </head>         
+     
+      <main>
+        
+              
       
-      <form action="cadastro cliente" method="get" className="bg-white p-8 shadow-md rounded-lg space-y-6 max-w-lg mx-auto">
-        <DadosPessoais
-          Nome={valorDoNome}
-          DN={valorDaDataNascimento}
-          Status={valorDoStatus}
-          Doc={valorDoDocumento}
-          End={valorDoEndereco}
-          Senha={valorDaSenha}
-          Login={valorDoLogin}
-          Anos={valorDosAnos}/>
-        
-        <DadosCondutor
-          Sim={valorDoSim}
-          Nao={valorDoNao}
-          Cnh={valorDoCnh}  
-          NomeCondutor={valorDoNomeCondutor}
-          DN={valorDaDataNascimento}
-          Status={valorDoStatus}
-          Doc={valorDoDocumento}
-          EndCondutor={valorDoEndereco}/>
+        <form action="cadastro cliente" method="get">
+          <DadosPessoais
+            Nome={valorDoNome}
+            DN={valorDaDataNascimento}
+            Status={valorDoStatus}
+            Doc={valorDoDocumento}
+            End={valorDoEndereco}
+            Senha={valorDaSenha}
+            Login={valorDoLogin}
+            Anos={valorDosAnos}/>
           
-        
-        <ObsUser />
-      </form>
-      <RodapeCad/>
-       
+          <DadosCondutor
+            Sim={valorDoSim}
+            Nao={valorDoNao}
+            Cnh={valorDoCnh}  
+            NomeCondutor={valorDoNomeCondutor}
+            DN={valorDaDataNascimento}
+            Status={valorDoStatus}
+            Doc={valorDoDocumento}
+            EndCondutor={valorDoEndereco}/>  
+          
+        </form>
+      </main>   
+      
+      <RodapeCad/> 
    
     </>
   )

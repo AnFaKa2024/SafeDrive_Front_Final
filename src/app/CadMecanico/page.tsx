@@ -20,12 +20,7 @@ const valorDosAnos = 10;
   return(
 
   <>
-    <Cabecalho/>
-    
-    <header className="p-8 bg-gray-100 rounded-lg shadow-md">
-      <h1 className="text-xl font-bold text-gray-800 mb-6">Seja um de nossos PARCEIROS</h1>
-    </header>
-    
+     
     <CadMeca  Nome={valorDoNome}
       DN={valorDaDataNascimento}
       Status={valorDoStatus}

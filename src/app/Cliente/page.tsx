@@ -10,10 +10,10 @@ export default function Cliente(){
   return (
     
     <>
-        <Cabecalho/>
+        
                 
-          <main className='container mx-auto p-4'>
-            <h2>Algumas Histórias de Clientes</h2>
+          <main className='p-3 m-1'>
+            <h2 className='text-center text-3xl font-semibold text-indigo-950'>Algumas Histórias de Clientes</h2>
 
             {/* Container para os componentes */}
 

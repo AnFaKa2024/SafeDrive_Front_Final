@@ -1,21 +1,30 @@
 "use client"
 
 import Image from "next/image"
-import assist_virtual from "../imagens/assitent_virtual.png"
+import atendente from "../imagens/atendente.png"
 
 
 export default function Rodape() {
    
   // RODAPE GERAL
       
-    return (
-      <footer className="mt-3 bg-indigo-950 rounded-lg shadow-md text-white flex justify-center items-center m-1">
-                  
-        <h2 className="text-center text-lg font-semibold mb-2">FALE CONOSCO ATRAVÉS DO NOSSO ASSISTENTE VIRTUAL</h2>
-        <Image src={assist_virtual} alt="assistente virtual" className=""/>
-        <p className='text-xl mb-2'>Contato</p>
-        <p className=" text-m"> e-mail: safedrive@atendimentosafedrive.com.br  |  +55 11 3456-6782 </p>
-       
-      </footer>  
-    )
-}
+  return (
+    <footer className="mt-3 bg-indigo-700 rounded-lg shadow-md text-white flex flex-col items-center p-2 m-1 ">
+      <div className="flex items-center w-full justify-center">
+        <div className="flex-shrink-0 mr-4">
+          <Image src={atendente} alt="assistente virtual" className="w-20 h-22 " />
+        </div>
+        <h2 className="text-center text-lg font-semibold">
+          FALE CONOSCO ATRAVÉS DA NOSSA ASSISTENTE VIRTUAL
+        </h2>
+      </div>
+  
+      <div className="mt-4 text-center">
+        <p className="text-xl mb-2">Contato</p>
+        <p className="text-m">
+          e-mail: safedrive@atendimentosafedrive.com.br | +55 11 3456-6782
+        </p>
+      </div>
+    </footer>
+  )
+}  

@@ -7,12 +7,9 @@ export default function Home(){
   return(
     <>
 
-    {/*  esse principal = cabeçalho  principal*/}
       <Principal/> 
       <Corpo/>
-      <Rodape/>
       
-       
     </>
   )
 }

@@ -15,9 +15,9 @@ export default function Diagnostico() {
   // };
 
   return (
-    <>
-      <Cabecalho />
-      <div className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg mt-8">
+    <main className="p-3 m-1 mt-3 text-center text-indigo-200 shadow-md rounded-lg">
+      
+      <div className="  mt-8">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Relatório de Diagnóstico</h2>
         
         {/* <div className="mb-4">
@@ -42,6 +42,6 @@ export default function Diagnostico() {
           </tbody>
         </table>
       </div>
-    </>
+    </main>
   );
 }

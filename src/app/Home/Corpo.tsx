@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import icone_cliente_preto from "../../imagens/icone_cliente_preto.png"
-import oficina from "../../imagens/oficina.png"
-import carro from "../../imagens/carro.png"
+import LogoAtu from '../../imagens/LogoAtu.png'
+import clientes from '../../imagens/clientes.png'
+import recomendacao from '../../imagens/recomendacao.png'
 import historico from "../../imagens/histórico.png"
 import diagnostico from "../../imagens/diagnóstico.png"
 import reclamacao from "../../imagens/reclamação.png"
@@ -11,26 +11,26 @@ import reclamacao from "../../imagens/reclamação.png"
 export default function Corpo() {
   return (
     <main className="bg-indigo-100 py-8 mt-2 shadow-md rounded-lg m-1">
-      <div className="container mx-auto grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="container mx-auto grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-6 min-h-[200px]">
         
         <section className="p-4 bg-white hover:bg-indigo-50 shadow-md rounded-lg text-center">
-          <h2 className="text-xl font-semibold mb-2">CADASTRO</h2>
+          <h2 className="text-xl font-semibold mb-2">SAFE DRIVE</h2>
           <Link href='/home/cadastrousuario'>
-            <Image src={icone_cliente_preto} className="mx-auto w-16" alt="Cliente" />
+           <Image src={LogoAtu} className="mx-auto w-20" alt="SafeDrive" />
           </Link>
         </section>
 
         <section className="p-4 bg-white  hover:bg-indigo-50 shadow-md rounded-lg text-center">
-          <h2 className="text-xl font-semibold mb-2">CADASTRO DA MECÂNICA</h2>
+          <h2 className="text-xl font-semibold mb-2">CLIENTES</h2>
           <Link href='/home/cadastromecanico'>
-            <Image src={oficina} className="mx-auto w-16" alt="Mecânica" />
+            <Image src={clientes} className="mx-auto w-24" alt="Clientes" />
           </Link>
         </section>
 
         <section className="p-4 bg-white hover:bg-indigo-50  shadow-md rounded-lg text-center">
-          <h2 className="text-xl font-semibold mb-2">CADASTRO DE VEÍCULO</h2>
+          <h2 className="text-xl font-semibold mb-2">RECOMENDAÇÕES</h2>
           <Link href='/home/cadastroveiculo'>
-            <Image src={carro} className="mx-auto w-16" alt="Veículo" />
+          <Image src={recomendacao} className="mx-auto w-16" alt="Veículo" /> 
           </Link>
         </section>
 
@@ -49,7 +49,7 @@ export default function Corpo() {
         </section>
 
         <section className="p-4 bg-white hover:bg-indigo-50  shadow-md rounded-lg text-center">
-          <h2 className="text-xl font-semibold mb-2">FEEDBACK</h2>
+          <h2 className="text-xl font-semibold mb-2">COMENTÁRIOS DOS CLIENTES</h2>
           <Link href='/home/relatos'>
             <Image src={reclamacao} className="mx-auto w-16" alt="Feedback" />
           </Link>

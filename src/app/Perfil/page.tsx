@@ -1,98 +1,172 @@
 "use client";
 
-import { useState } from 'react';
+import { useState } from "react";
+import { FaSave, FaEdit, FaTrash, FaPaperPlane } from "react-icons/fa"; // Ícones para as ações CRUD
 
-export default function Perfil() {
-  // dados do usuário
-  const [usuario, setUsuario] = useState({
-    nome: 'João Silva',
-    email: 'joao.silva@email.com',
-    observacoes: '',
+export default function EditarEndereco() {
+  // Dados do endereço do usuário
+  const [endereco, setEndereco] = useState({
+    tipo: "residencial", // Pode ser 'residencial' ou 'comercial'
+    rua: "",
+    numero:"",
+    cidade: "",
+    estado: "",
+    cep: "",
   });
 
-  // armazenar a lista de observações
-  const [listaObservacoes, setListaObservacoes] = useState([]);
+  // Armazena uma lista de endereços cadastrados
+  const [enderecos, setEnderecos] = useState([]);
 
-  // atualizar os dados do usuário
+  // Atualizar os dados do endereço
   const handleChange = (e) => {
     const { name, value } = e.target;
-    // Verifica se o evento é um input válido
-    if (name && (name === 'nome' || name === 'email' || name === 'observacoes')) {
-      setUsuario((prev) => ({ ...prev, [name]: value }));
-    }
+    setEndereco((prev) => ({ ...prev, [name]: value }));
   };
 
-  // adicionar observação
-  const handleAddObservacao = (e) => {
-    e.preventDefault();
-    if (usuario.observacoes.trim() !== "") { // Verifica se há texto antes de adicionar
-      setListaObservacoes((prevLista) => [...prevLista, usuario.observacoes.trim()]);
-      setUsuario((prev) => ({ ...prev, observacoes: '' })); // Usar função de callback
-    }
+  // Salvar o endereço no banco de dados
+  const handleSalvarEndereco = async () => {
+    // Conecte-se ao banco e salve o endereço
+    const novoEndereco = { ...endereco };
+    setEnderecos((prevEnderecos) => [...prevEnderecos, novoEndereco]);
+    setEndereco({ tipo: "residencial", rua: "", numero: "", cidade: "", estado: "", cep: "" });
+    alert("Endereço salvo com sucesso!");
   };
 
-  // excluir observação
-  const handleDeleteObservacao = (index) => {
-    if (typeof index === 'number' && index >= 0 && index < listaObservacoes.length) {
-      setListaObservacoes((prevLista) => prevLista.filter((_, i) => i !== index));
-    }
+  // Editar um endereço
+  const handleEditarEndereco = (index) => {
+    const enderecoParaEditar = enderecos[index];
+    setEndereco(enderecoParaEditar);
+    setEnderecos((prevEnderecos) =>
+      prevEnderecos.filter((_, i) => i !== index)
+    );
+  };
+
+  // Excluir um endereço
+  const handleExcluirEndereco = (index) => {
+    setEnderecos((prevEnderecos) =>
+      prevEnderecos.filter((_, i) => i !== index)
+    );
+    alert("Endereço excluído!");
+  };
+
+  // Enviar endereço para integração Java
+  const handleEnviarEndereco = async () => {
+    // Conectar com a interface Java para envio do endereço
+    alert("Endereço enviado com sucesso para o servidor!");
   };
 
   return (
-    <div className="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-md mt-10">
-      <h1 className="text-2xl font-bold mb-4">Perfil do Usuário</h1>
+    <div className="max-w-lg mx-auto p-6 bg-indigo-200 rounded-lg shadow-md mt-10">
+      <h1 className="text-2xl font-bold mb-4 text-indigo-950">Editar Endereço</h1>
       <form className="mb-6">
         <div className="mb-4">
-          <label className="block text-gray-700" htmlFor="nome">Nome:</label>
-          <input
-            id="nome"
-            type="text"
-            name="nome"
-            value={usuario.nome}
+          <label className="block text-indigo-950">Tipo de Endereço:</label>
+          <select
+            name="tipo"
+            value={endereco.tipo}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
-          />
+            className="w-full p-2 border border-indigo-400 rounded-md"
+          >
+            <option value="residencial">Residencial</option>
+            <option value="comercial">Comercial</option>
+          </select>
         </div>
+
         <div className="mb-4">
-          <label className="block text-gray-700" htmlFor="email">Email:</label>
+          <label className="block text-indigo-950">Rua:</label>
           <input
-            id="email"
-            type="email"
-            name="email"
-            value={usuario.email}
+            type="text"
+            name="rua"
+            value={endereco.rua}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+            className="w-full p-2 border border-indigo-300 rounded-md"
           />
         </div>
+
+        <div className="mb-4">
+          <label className="block text-indigo-950">Número:</label>
+          <input
+            type="text"
+            name="rua"
+            value={endereco.numero}
+            onChange={handleChange}
+            className="w-full p-2 border border-indigo-300 rounded-md"
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-indigo-950">Cidade:</label>
+          <input
+            type="text"
+            name="cidade"
+            value={endereco.cidade}
+            onChange={handleChange}
+            className="w-full p-2 border border-indigo-300 rounded-md"
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-indigo-950">Estado:</label>
+          <input
+            type="text"
+            name="estado"
+            value={endereco.estado}
+            onChange={handleChange}
+            className="w-full p-2 border border-indigo-300 rounded-md"
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-indigo-950">CEP:</label>
+          <input
+            type="text"
+            name="cep"
+            value={endereco.cep}
+            onChange={handleChange}
+            className="w-full p-2 border border-indigo-300 rounded-md"
+          />
+        </div>
+
+        <div className="flex justify-between mt-4">
+          <button
+            type="button"
+            onClick={handleSalvarEndereco}
+            className="flex items-center bg-green-500 text-white px-4 py-2 rounded"
+          >
+            <FaSave className="mr-2" /> Salvar
+          </button>
+          <button
+            type="button"
+            onClick={handleEnviarEndereco}
+            className="flex items-center bg-blue-500 text-white px-4 py-2 rounded"
+          >
+            <FaPaperPlane className="mr-2" /> Enviar
+          </button>
+        </div>
       </form>
-      <form onSubmit={handleAddObservacao}>
-        <textarea
-          name="observacoes"
-          value={usuario.observacoes}
-          onChange={handleChange}
-          className="w-full h-32 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
-          placeholder="Digite uma observação..."
-        ></textarea>
-        <button
-          type="submit"
-          disabled={!usuario.observacoes.trim()} // Desabilita o botão se não houver observação
-          className={`mt-4 w-full p-2 ${usuario.observacoes.trim() ? 'bg-blue-600 hover:bg-blue-700' : 'bg-gray-300 cursor-not-allowed'} text-white font-semibold rounded transition duration-200`}
-        >
-          Adicionar Observação
-        </button>
-      </form>
+
       <div className="mt-6">
-        <h2 className="text-lg font-bold mb-2">Observações:</h2>
+        <h2 className="text-lg font-bold mb-2 text-indigo-950">Endereços Cadastrados:</h2>
         <ul className="list-disc list-inside">
-          {listaObservacoes.map((obs, index) => (
+          {enderecos.map((end, index) => (
             <li key={index} className="flex justify-between items-center mb-2">
-              <span>{obs}</span>
-              <button
-                className="ml-2 text-red-600 hover:text-red-800"
-                onClick={() => handleDeleteObservacao(index)}
-              >
-                Excluir
-              </button>
+              <span>
+                {end.tipo}: {end.rua}, {end.numero} {end.cidade} - {end.estado}, CEP: {end.cep}
+              </span>
+              <div className="flex space-x-2">
+                <button
+                  onClick={() => handleEditarEndereco(index)}
+                  className="text-yellow-500 hover:text-yellow-700"
+                >
+                  <FaEdit />
+                </button>
+                <button
+                  onClick={() => handleExcluirEndereco(index)}
+                  className="text-red-500 hover:text-red-700"
+                >
+                  <FaTrash />
+                </button>
+              </div>
             </li>
           ))}
         </ul>
