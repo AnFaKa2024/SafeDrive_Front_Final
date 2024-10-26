@@ -1,32 +1,56 @@
-import { DivMec } from "@/styled"
+
 import { CondutorProps } from "@/types"
 
 
+export default function DadosCondutor({ Sim, Nao, Cnh, NomeCondutor, DN, Status, Doc, EndCondutor }: CondutorProps) {
+  return (
+    <main className="p-6 bg-gray-100 rounded-lg shadow-lg max-w-md mx-auto">
+      <h2 className="text-xl font-bold mb-4 text-center text-gray-800">DADOS DO CONDUTOR</h2>
 
-export default function DadosCondutor({idSim, idNao, idCnh}:CondutorProps){
+      <h3 className="text-lg font-semibold text-gray-700 mb-2">São os mesmos dados cadastrados do usuário?</h3>
 
+      <div className="flex items-center mb-4">
+        <input
+          type="radio"
+          name="NomeCondutor"
+          id={NomeCondutor ? 'idSim' : undefined}
+          value="sim"
+          className="mr-2"
+        />
+        <label htmlFor="idSim" className="text-gray-600">Sim, informe o número da CNH</label>
+      </div>
 
-  return(
+      <div className="mb-4">
+        <label htmlFor="Cnh" className="block text-gray-600">Número CNH</label>
+        <input
+          type="number"
+          placeholder="Número CNH"
+          id={Cnh ? 'idCnh' : undefined}
+          required
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
+        />
+      </div>
 
-    <DivMec>
-        <h2><b>DADOS DO CONDUTOR</b></h2>
-       
-        <h3><b>São os mesmos dados cadastrados do usuário?</b></h3>
+      <h4 className="text-center text-gray-500 mb-4">Ou</h4>
 
-        <input type="radio" name="condutor" id={idSim? 'idSim' : undefined} value="sim"/>
-        <label htmlFor="idSim">Sim, informe o número da CNH</label>
-      
-        <label htmlFor="idCnh"></label>
-        <input type="number" placeholder="Número CNH" id={idCnh? 'idCnh' : undefined} required /><br />
+      <div className="flex items-center mb-4">
+        <input
+          type="radio"
+          name="condutor"
+          id={Nao ? 'idNao' : undefined}
+          value="não"
+          className="mr-2"
+        />
+        <label htmlFor="idNao" className="text-gray-600">Não! Por gentileza, insira os dados necessários.</label>
+      </div>
 
-            <h4>Ou</h4>
-
-        <input type="radio" name="condutor" id={idNao? 'idNao' : undefined} value="não" />
-        <label htmlFor="idNão">Não! Por gentileza, insira os dados necessário.</label>
-        <br />
-        <br />
-        <button className= "BotaoConfirmar"  onClick={()=> alert ('Confirmado!')}> Confirmar Informações </button>
-      
-    </DivMec>
-  )
+      <button
+        className="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-300"
+        onClick={() => alert('Confirmado!')}
+      >
+        Confirmar Informações
+      </button>
+    </main>
+  );
 }
+

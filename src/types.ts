@@ -1,41 +1,60 @@
 
 export type CondutorProps ={
-  idSim: boolean;
-  idNao: boolean;
-  idCnh: string | number; 
+  Sim: boolean;
+  Nao: boolean;
+  Cnh: string | number;  
+  NomeCondutor: string;
+  DN: Date;
+  Status: string;
+  Doc: number;
+  EndCondutor: string;
 }
 
 export type PessoaisProps ={
-  idNome: string;
-  idDN: Date;
-  idStatus: string;
-  idDoc: number;
-  idEnd: string;
-  idSenha: string;
-  idLogin: string;
-  idAnos: number;
+  Nome: string;
+  DN: Date;
+  Status: string;
+  Doc: number;
+  End: string;
+  Senha: string;
+  Login: string;
+  Anos: number;
+}
+
+export type OficinaProps ={
+  NomeFantasia: string;
+  EndOficina: string;
+}
+
+export type DadosVeiculoProps ={
+  Categoria: string;
+  Placa: string;
+ 
+  }
+
+export type FiltroProps ={
+  FiltroAr: Date;
+  FiltroMotor: Date;
+  FiltroCombustivel: Date;
+ 
+}
+
+export type FluidoProps ={
+  OleoMotor: Date;
+  OleoFreio: Date;
+  AguaRadiador: Date;
+
 }
 
 export type NovoCondProps ={
   name: string;
   value: string | ' ';
   email: string;
- 
-
-}
-
-export type ObsUserProps ={
-  idObs: string; 
 }
 
 export type RodapeUserProps ={
-
 }
 
-export type FiltroProps ={
-  name: string;
-  data: Date;
-}
 
 export type BotoesProps ={
   BotaoSalvar: Function;

@@ -1,38 +1,28 @@
-import { HeaderHome } from "@/styled";
+"use client"
+import Link from 'next/link';
+import Image from 'next/image';
+import LG_SafeDrive from '../../imagens/LG_SafeDrive.png'
 
-
-
-export default function Principal(){
-  return(
-
-    
-
-    <HeaderHome>
-    
-        <h1>Olá, seja bem vindo ao SafeDrive</h1>
-
-        <img src= '/LG_SafeDrive.png' className="logo"  alt="Logo SafeDrive" />
-        <br />
-        <nav className="navegacao">
-          <ul>
-            <div className="SD">
-              <li><Link to='/home/safedrive'>SafeDrive</Link></li>
-            </div>
-            <div className="Cl">
-              <li><Link to='/home/cliente'>Clientes</Link></li>
-            </div>
-            <div className="Rec">
-              <li><Link to='/home/recomendacao'>Recomendações</Link></li>
-            </div>
+export default function Principal() {
+  return (
+    <header className="bg-gray-900 text-white py-6 shadow-md rounded-lg m-1">
+      <div className="container mx-auto text-center">
+        <h1 className="text-5xl font-bold mb-4">Olá, seja bem vindo ao SafeDrive</h1>
+        <Image src={LG_SafeDrive} className="mx-0 mb-4 min-h-10 w-24" alt="Logo SafeDrive" />
+        <nav>
+          <ul className="flex justify-center space-x-8 text-3xl">
+            <li>
+              <Link href='/home/safedrive' className="hover:text-gray-300">SafeDrive</Link>
+            </li>
+            <li>
+              <Link href='/home/cliente' className="hover:text-gray-300">Clientes</Link>
+            </li>
+            <li>
+              <Link href='/home/recomendacao' className="hover:text-gray-300">Recomendações</Link>
+            </li>
           </ul>
-      </nav>
-        
-    
-
-
-      </HeaderHome>
-    
-    
-  )
-
+        </nav>
+      </div>
+    </header>
+  );
 }

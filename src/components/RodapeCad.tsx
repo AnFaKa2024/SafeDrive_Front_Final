@@ -1,16 +1,19 @@
-/*import { RodapeUserProps } from "../../types";*/
 
-import { DivMec } from "../styled"
+"use client"
 
 
-export default function RodapeCad(/*RodapeUserProps*/){
+
+export default function RodapeCad(){
 
   return(
-    <DivMec>
+    <footer className="bg-gray-100 p-4 flex flex-col items-center">
       
-      <button onClick={()=> alert()}> Cadastrar </button> <button onClick={()=> alert()}> Limpar Formulário </button>
-      <input type="file" name="documento" id="idDoc" />
+      <button onClick={()=> alert()} className="bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700 transition"> Cadastrar </button> 
       
-    </DivMec>
+      <button onClick={()=> alert()} className="bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700 transition"> Limpar Formulário </button>
+      
+      <input type="file" className="border border-gray-300 p-2 rounded" name="documento" id="idDoc" />
+      
+    </footer>
   )
 }

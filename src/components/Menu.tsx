@@ -1,11 +1,13 @@
+"use client"
+
 import Link from "next/link"
 
 export default function Menu(){
 
   return(
 
-    <nav>
-      <ul>
+    <nav className="flex">
+      <ul className="flex gap-6 links">
         <li><Link href={'/'}>HOME</Link></li>
         <li><Link href={'/CadMecanico'}>Cadastro do Mecanico</Link></li>
         <li><Link href={'/CadUsuario'}>Cadastro do Usuario</Link></li>

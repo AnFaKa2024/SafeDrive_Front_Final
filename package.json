@@ -6,14 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "backend": "json server --watch dados.json --port 8000"
   },
+  
   "dependencies": {
     "next": "14.2.14",
     "oracledb": "^6.6.0",
     "react": "^18",
-    "react-dom": "^18",
-    "styled-components": "^6.1.13"
+    "react-dom": "^18"
+    
   },
   "devDependencies": {
     "@types/node": "^20",

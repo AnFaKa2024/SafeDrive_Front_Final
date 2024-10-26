@@ -1,26 +1,18 @@
-import { DivMec } from "@/styled";
-import { NovoCondProps } from "@/types";
+"use client"
 
+import Cabecalho from "@/components/Cabecalho"
+import Acesso from "./OqCadastrar/Acesso"
+import Rodape from "@/components/Rodape"
+import Carrossel from "@/components/Carrossel"
 
-export default function PrimeiroAcesso({name, value}: NovoCondProps) {
-  return (
-    
+export default function PrimeiroAcesso(){
+  return(
 
-
-    <DivMec>
-      <h2>Primeiro Acesso</h2>
-        <select name={name} id="idacesso" className="idacesso">
-          <option value={value} disabled selected></option>
-          <option value={value}>Sim</option>
-          <option value={value}>Não</option>
-        </select>
-        <br />
-        <button className= "BotaoConfirmar"  onClick={()=> alert ('Confirmado!')}> Confirmar</button>
-    </DivMec>
-
- 
-
-    
-    
+    <>
+      <Cabecalho/>
+      <Acesso/>
+      
+      <Rodape/>
+    </>
   )
 }

@@ -1,16 +1,16 @@
-import { DivMec } from "@/styled";
-import { ObsUserProps } from "@/types";
 
-export default function ObsUser({idObs}: ObsUserProps){
+
+
+export default function ObsUser(){
 
   return(
-    <DivMec>
+    <section className="bg-gray-100 p-6 rounded-lg shadow-sm">
     
-        <h2><b>OBSERVAÇÕES</b></h2>
-        <textarea name="obs" id={idObs? "idObs":undefined} /*cols="30" rows="10"*/></textarea>
-        <br />
-        <button className="BotaoEnviar" onClick={()=> alert (' Informações ENVIADAS com sucesso ')}> Enviar Informações </button>
+        <h2 className="text-xl font-semibold mb-4"><b>OBSERVAÇÕES</b></h2>
+        <textarea name="obs" id="idObs" className="w-full p-2 border rounded resize-none" placeholder="Insira observações..." rows= {5}></textarea>
+        
+        <button className="mt-4 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700" onClick={()=> alert (' Informações ENVIADAS com sucesso ')}> Enviar Informações </button>
     
-    </DivMec>
+    </section>
   )
 }

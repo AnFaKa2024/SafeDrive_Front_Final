@@ -1,23 +1,21 @@
-import { DivMec } from "@/styled";
+
 import { FiltroProps } from "@/types";
 
-export default function Filtro({name}: FiltroProps){
+export default function Filtro({FiltroAr, FiltroMotor, FiltroCombustivel}: FiltroProps){
 
   return(
-
+  
+    <section className="bg-gray-100 p-6 rounded-lg shadow-sm">
     
+      <h2 className="text-xl font-semibold mb-4"><b>ÚLTIMA TROCA DE FILTRO</b></h2>
     
-    <DivMec>
-    
-      <h2><b>ÚLTIMA TROCA DE FILTRO</b></h2>
-    
-      <label htmlFor="idar">Filtro do Ar</label> <input type="date" name={name} id="idar" required />
-      <label htmlFor="idFmotor">  Filtro do Motor</label> <input type="date" name={name} id="idFmotor" required />
-      <label htmlFor="idcombu">  Filtro do Combustível</label> <input type="date" name={name}id="idcombu" required />
+      <label htmlFor="idAr" className="block mb-2">Filtro do Ar</label> <input type="date" name="FiltroAr" id="idAr" required />
+      <label htmlFor="idMotor" className="block mb-2">  Filtro do Motor</label> <input type="date" name="FiltroMotor" id="idMotor" required />
+      <label htmlFor="idCombu" className="block mb-2">  Filtro do Combustível</label> <input type="date" name="FiltroCombustivel" id="idCombu" required />
       <br />
       <br />
-      <button className= "BotaoConfirmar"  onClick={()=> alert ('Confirmado!')}> Confirmar Informações </button>
-    </DivMec>
+      <button className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700"  onClick={()=> alert ('Confirmado!')}> Confirmar Informações </button>
+    </section>
   
   )
 }

@@ -1,5 +1,6 @@
+"use client"
+
 import Cabecalho from "@/components/Cabecalho";
-import Rodape from "@/components/Rodape";
 import Nos from "./Nos";
 import Texto from "./Texto";
 
@@ -11,8 +12,6 @@ export default function SafeDrive(){
       <Cabecalho/>
       <Texto/>
       <Nos/>
-      
-      <Rodape/>
 
     </>
   )

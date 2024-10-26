@@ -1,128 +1,102 @@
-import Cabecalho from "@/components/Cabecalho";
-import { DivDiag } from "@/styled";
-import { useEffect, useState } from "react"; // Para gerenciar estado e efeito
-import { fetchUserProfile, updateUserProfile, deleteUserAccount } from "@/services/api"; // Funções para chamadas de API
-import { NovoCondProps } from "@/types";
+"use client";
 
+import { useState } from 'react';
 
-export default function Perfil({name, value, email}: NovoCondProps){
-          
+export default function Perfil() {
+  // dados do usuário
+  const [usuario, setUsuario] = useState({
+    nome: 'João Silva',
+    email: 'joao.silva@email.com',
+    observacoes: '',
+  });
 
-  const [user, setUser] = useState(null);
-  const [isEditing, setIsEditing] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
+  // armazenar a lista de observações
+  const [listaObservacoes, setListaObservacoes] = useState([]);
 
-  useEffect(() => {
-    // Chamar a API para buscar o perfil do usuário
-    const getUserProfile = async () => {
-      try {
-        const profileData = await fetchUserProfile();
-        setUser(profileData);
-      } catch (error) {
-        setErrorMessage("Erro ao buscar perfil do usuário.");
-      }
-    };
-    getUserProfile();
-  }, []);
+  // atualizar os dados do usuário
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    // Verifica se o evento é um input válido
+    if (name && (name === 'nome' || name === 'email' || name === 'observacoes')) {
+      setUsuario((prev) => ({ ...prev, [name]: value }));
+    }
+  };
 
-  const handleUpdate = async (e) => {
+  // adicionar observação
+  const handleAddObservacao = (e) => {
     e.preventDefault();
-    try {
-      await updateUserProfile(user);
-      setSuccessMessage("Perfil atualizado com sucesso!");
-      setIsEditing(false);
-    } catch (error) {
-      setErrorMessage("Erro ao atualizar perfil.");
+    if (usuario.observacoes.trim() !== "") { // Verifica se há texto antes de adicionar
+      setListaObservacoes((prevLista) => [...prevLista, usuario.observacoes.trim()]);
+      setUsuario((prev) => ({ ...prev, observacoes: '' })); // Usar função de callback
     }
   };
 
-  const handleDelete = async () => {
-    try {
-      await deleteUserAccount();
-      setSuccessMessage("Conta deletada com sucesso.");
-      // Redirecionar ou realizar outra ação após a exclusão
-    } catch (error) {
-      setErrorMessage("Erro ao deletar conta.");
+  // excluir observação
+  const handleDeleteObservacao = (index) => {
+    if (typeof index === 'number' && index >= 0 && index < listaObservacoes.length) {
+      setListaObservacoes((prevLista) => prevLista.filter((_, i) => i !== index));
     }
   };
 
-
-  return(
-    <>
-      <Cabecalho/>
-        <DivDiag>
-  
-        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-        {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
-
-        {user && (
-          <form onSubmit={handleUpdate}>
-            <div>
-              <label>Nome:</label>
-              <input
-                type="text"
-                value={user.name}
-                onChange={(e) => setUser({...user, name: e.target.value })}
-                disabled={!isEditing}
-              />
-            </div>
-            <div>
-              <label>E-mail:</label>
-              <input
-                type="email"
-                value={user.email}
-                onChange={(e) => setUser({ ...user, email: e.target.value })}
-                disabled={!isEditing}
-              />
-            </div>
-            <button type="button" onClick={() => setIsEditing(!isEditing)}>
-              {isEditing ? "Cancelar" : "Editar"}
-            </button>
-            {isEditing && <button type="submit">Salvar</button>}
-          </form>
-        )}
-
-        <button onClick={handleDelete} style={{ color: "red" }}>
-          Deletar Conta
+  return (
+    <div className="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-md mt-10">
+      <h1 className="text-2xl font-bold mb-4">Perfil do Usuário</h1>
+      <form className="mb-6">
+        <div className="mb-4">
+          <label className="block text-gray-700" htmlFor="nome">Nome:</label>
+          <input
+            id="nome"
+            type="text"
+            name="nome"
+            value={usuario.nome}
+            onChange={handleChange}
+            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block text-gray-700" htmlFor="email">Email:</label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            value={usuario.email}
+            onChange={handleChange}
+            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+          />
+        </div>
+      </form>
+      <form onSubmit={handleAddObservacao}>
+        <textarea
+          name="observacoes"
+          value={usuario.observacoes}
+          onChange={handleChange}
+          className="w-full h-32 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+          placeholder="Digite uma observação..."
+        ></textarea>
+        <button
+          type="submit"
+          disabled={!usuario.observacoes.trim()} // Desabilita o botão se não houver observação
+          className={`mt-4 w-full p-2 ${usuario.observacoes.trim() ? 'bg-blue-600 hover:bg-blue-700' : 'bg-gray-300 cursor-not-allowed'} text-white font-semibold rounded transition duration-200`}
+        >
+          Adicionar Observação
         </button>
-      </DivDiag>
-    </>
+      </form>
+      <div className="mt-6">
+        <h2 className="text-lg font-bold mb-2">Observações:</h2>
+        <ul className="list-disc list-inside">
+          {listaObservacoes.map((obs, index) => (
+            <li key={index} className="flex justify-between items-center mb-2">
+              <span>{obs}</span>
+              <button
+                className="ml-2 text-red-600 hover:text-red-800"
+                onClick={() => handleDeleteObservacao(index)}
+              >
+                Excluir
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        </DivDiag>
-    </>  
-    
- )
 }
