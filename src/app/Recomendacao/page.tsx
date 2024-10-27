@@ -1,9 +1,7 @@
 "use client"
 
-import InfoVeiculo from '../Historico/InfoVeiculo';
-import Historico from '../Historico/page';
-import Login from '../OqCadastrar/Login';
-import NovoCadastro from '../OqCadastrar/NovoCadastro';
+import Link from "next/link";
+import { FaHome } from "react-icons/fa";
 
 import Recomendacao1 from './Recomendacao1';
 import Recomendacao2 from './Recomendacao2';
@@ -13,10 +11,13 @@ export default function Recomendacao() {
 
   return (
     <>
+      <header className="flex items-center justify-end p-4" >
+          <Link href="/" className= "botao-voltar-home -mt-24 text-white text-5xl "><FaHome className="" /></Link>
+      </header>
       
       <main className='grow flex flex-col'>
         
-        <h2 className='text-2xl text-center mb-4  '><b>Aqui estão algumas dicas essenciais para manter seu veículo em bom estado:</b></h2>
+        <h2 className='text-3xl text-center mb-4  mt-2'><b>Aqui estão algumas dicas essenciais para manter seu veículo em bom estado:</b></h2>
           
           <div className='flex space-x-3 w-full'>
            <div className='flex-1'>  <Recomendacao1 /></div>
@@ -24,14 +25,7 @@ export default function Recomendacao() {
            <div className='flex-1'> <Recomendacao3 /></div>
           </div>
         
-      </main>  
-
-
-      <Login/>
-      
-      <InfoVeiculo/>
-      <NovoCadastro/>
-      
+      </main>           
 
     </>
   )

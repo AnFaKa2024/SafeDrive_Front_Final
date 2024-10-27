@@ -2,9 +2,14 @@
 
 import Link from "next/link";
 import { FaHome } from "react-icons/fa";
-import Pessoal from './Pessoal'
+import Orcamento from "./Orcamento";
 
-export default function Perfil(){
+
+
+
+
+export default function ConsultaOrcamento(){
+
   return(
 
     <>
@@ -13,7 +18,10 @@ export default function Perfil(){
         <Link href="/" className= "botao-voltar-home -mt-24 text-white text-5xl "><FaHome className="" /></Link>
       </header>
 
-      <Pessoal/>
-    </>
+      <Orcamento/>
+
+      </>
+    
+   
   )
 }

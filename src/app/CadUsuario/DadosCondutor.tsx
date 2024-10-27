@@ -18,7 +18,7 @@ export default function DadosCondutor({ Sim, Nao, Cnh, NomeCondutor, DN, Status,
         </div>
 
         <div className="flex flex-col ">
-          <label htmlFor="Cnh" className="block text-indigo-950 text-lg">Número CNH</label>
+          
           <input type="text" placeholder="Número CNH" id={Cnh ? 'idCnh' : undefined} required className="w-44 px-3 py-2 border border-indigo-300 rounded-md hover:bg-indigo-50"/>
         </div>
 
