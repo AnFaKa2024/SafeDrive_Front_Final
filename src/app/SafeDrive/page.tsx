@@ -9,7 +9,7 @@ export default function SafeDrive(){
   return(
 
     <>
-      <Cabecalho/>
+     
       <Texto/>
       <Nos/>
 

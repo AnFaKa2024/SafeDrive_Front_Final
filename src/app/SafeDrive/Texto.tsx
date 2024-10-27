@@ -7,7 +7,7 @@ export default function Texto(){
   return(
 
     
-      <main className="flex-col flex min-h-5 items-center w-full mx-auto p-4 bg-indigo-100 rounded-lg shadow-md mt-3">
+      <main className="flex-col flex min-h-5 items-center p-2 m-1 bg-indigo-100 rounded-lg shadow-md mt-3">
 
         <Image src={LogoAtu} alt="Logo Atualizada"
           className="w-32 h-auto mb-4"/>
