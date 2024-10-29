@@ -16,49 +16,49 @@ export default function Corpo() {
         
         <section className="p-4 bg-white hover:bg-indigo-50 shadow-md rounded-lg text-center">
           <h2 className="text-xl text-indigo-950 font-semibold mb-2">SAFE DRIVE</h2>
-          <Link href='/home/cadastrousuario'>
+          <Link href={'/SafeDrive'}>
            <Image src={LogoAtu} className="mx-auto w-20" alt="SafeDrive" />
           </Link>
         </section>
 
         <section className="p-4 bg-white  hover:bg-indigo-50 shadow-md rounded-lg text-center">
           <h2 className="text-xl text-indigo-950 font-semibold mb-2">CLIENTES</h2>
-          <Link href='/home/cadastromecanico'>
+          <Link href={'/Cliente'}>
             <Image src={clientes} className="mx-auto w-24" alt="Clientes" />
           </Link>
         </section>
 
         <section className="p-4 bg-white hover:bg-indigo-50  shadow-md rounded-lg text-center">
           <h2 className="text-xl text-indigo-950 font-semibold mb-2">RECOMENDAÇÕES</h2>
-          <Link href='/home/cadastroveiculo'>
+          <Link href={'/Recomendacao'}>
           <Image src={recomendacao} className="mx-auto w-16" alt="Veículo" /> 
           </Link>
         </section>
 
         <section className="p-4 bg-white hover:bg-indigo-50  shadow-md rounded-lg text-center">
           <h2 className="text-xl text-indigo-950 font-semibold mb-2">ORÇAMENTO</h2>
-          <Link href='/home/cadastroveiculo'>
+          <Link href={'/ConsultaOrcamento'}>
           <Image src={orcSfundo} className="mx-auto w-20" alt="Veículo" /> 
           </Link>
         </section>
 
         <section className="p-4 bg-white  hover:bg-indigo-50 shadow-md rounded-lg text-center">
           <h2 className="text-xl text-indigo-950 font-semibold mb-2">HISTÓRICO DO VEÍCULO</h2>
-          <Link href='/home/historico'>
+          <Link href={'/Historico'}>
             <Image src={historico} className="mx-auto w-16" alt="Histórico" />
           </Link>
         </section>
 
         <section className="p-4 bg-white hover:bg-indigo-50  shadow-md rounded-lg text-center">
           <h2 className="text-xl text-indigo-950 font-semibold mb-2">DIAGNÓSTICO</h2>
-          <Link href='/home/diagnostico'>
+          <Link href={'/Diagnostico'}>
             <Image src={diagnostico} className="mx-auto w-16" alt="Diagnóstico" />
           </Link>
         </section>
 
         <section className="p-4 bg-white hover:bg-indigo-50  shadow-md rounded-lg text-center">
           <h2 className="text-xl text-indigo-950 font-semibold mb-2">COMENTÁRIOS DOS CLIENTES</h2>
-          <Link href='/home/relatos'>
+          <Link href={'/Relatos'}>
             <Image src={reclamacao} className="mx-auto w-16" alt="Feedback" />
           </Link>
         </section>

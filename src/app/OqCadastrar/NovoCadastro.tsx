@@ -18,28 +18,28 @@ export default function NovoCadastro(){
 
       <section className="p-4 bg-white hover:bg-indigo-50 shadow-md rounded-lg text-center">
         <h2 className="text-xl font-semibold mb-2">CADASTRO DE USUÁRIO</h2>
-        <Link href='/home/cadastrousuario'>
+        <Link href={'/CadUsuario'}>
           <Image src={icone_cliente_preto} className="mx-auto w-16" alt="Cliente" />
         </Link>
       </section>
 
       <section className="p-4 bg-white hover:bg-indigo-50 shadow-md rounded-lg text-center">
         <h2 className="text-xl font-semibold mb-2">CADASTRO DE CONDUTOR</h2>
-        <Link href='/home/cadastrousuario'>
+        <Link href={'/CadaUsuario'}>
           <Image src={condutorFundo} className="mx-auto w-20" alt="Cliente" />
         </Link>
       </section>
 
       <section className="p-4 bg-white  hover:bg-indigo-50 shadow-md rounded-lg text-center">
         <h2 className="text-xl font-semibold mb-2">CADASTRO DA OFICINA MECÂNICA</h2>
-        <Link href='/home/cadastromecanico'>
+        <Link href={'/CadMecanico'}>
           <Image src={oficina} className="mx-auto w-16" alt="Mecânica" />
         </Link>
       </section>
 
       <section className="p-4 bg-white hover:bg-indigo-50  shadow-md rounded-lg text-center">
         <h2 className="text-xl font-semibold mb-2">CADASTRO DE VEÍCULO</h2>
-        <Link href='/home/cadastroveiculo'>
+        <Link href={'/CadVeiculo'}>
           <Image src={carro} className="mx-auto w-16" alt="Veículo" />
         </Link>
       </section>

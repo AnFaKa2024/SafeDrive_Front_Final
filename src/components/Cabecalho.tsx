@@ -8,7 +8,7 @@ import Link from "next/link";
 
 
 const handleHomeClick = () => {
-  window.location.href = '/'; // Redireciona para a home
+  window.location.href = '/Home'; // Redireciona para a home
 };
 
 export default function Cabecalho() {

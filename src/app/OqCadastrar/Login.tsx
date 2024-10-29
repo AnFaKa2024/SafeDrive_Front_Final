@@ -1,22 +1,16 @@
-
-// import { useNavigate } from 'react-router-dom';
+import Link from 'next/link';
 
 export default function Login() {
-  // const navigate = useNavigate();
+  const handleLogin = () => {
+    alert('Acessando o portal da SafeDrive');
+  };
 
-  // const handleLogin = () => {
-  //   alert('Acessando o portal da SafeDrive');
-  //   navigate('/home');
-  // };
-
-  // const handleCadastro = () => {
-  //   alert('Faça seu cadastro');
-  //   navigate('/primeiroacesso');
-  // };
+  const handleCadastro = () => {
+    alert('Faça seu cadastro');
+  };
 
   return (
     <main className="flex flex-col items-center justify-center shadow-md rounded-lg mt-15 p-4 m-1 bg-indigo-700">
-            
       <label htmlFor="idLogin" className="text-xl text-white font-semibold mb-2">Login</label>
       <input
         type="text"
@@ -31,19 +25,23 @@ export default function Login() {
         id="idSenha"
       />
 
-      <button
-        className="w-64 p-2 text-xl bg-green-600 hover:bg-green-700 text-white font-semibold rounded-md transition duration-200 mb-4"
-        // onClick={handleLogin}
-      >
-        Acessar SafeDrive
-      </button>
+      <Link href="/Home">
+        <button
+          className="w-64 p-2 text-xl bg-green-600 hover:bg-green-700 text-white font-semibold rounded-md transition duration-200 mb-4"
+          onClick={handleLogin}
+        >
+          Acessar SafeDrive
+        </button>
+      </Link>
 
-      <button
-        className="w-64 p-2 text-xl bg-indigo-300 hover:bg-indigo-400 text-gray-800 font-semibold rounded-md transition duration-200 mb-4"
-        // onClick={handleCadastro}
-      >
-        Novo Cadastro
-      </button>
+      <Link href="/OqCadastrar">
+        <button
+          className="w-64 p-2 text-xl bg-indigo-300 hover:bg-indigo-400 text-gray-800 font-semibold rounded-md transition duration-200 mb-4"
+          onClick={handleCadastro}
+        >
+          Novo Cadastro
+        </button>
+      </Link>
 
       <button
         className="w-64 p-2 text-xl bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-md transition duration-200"
@@ -52,5 +50,5 @@ export default function Login() {
         Recuperar Senha
       </button>
     </main>
-  )
+  );
 }

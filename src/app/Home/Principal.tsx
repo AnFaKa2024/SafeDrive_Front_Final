@@ -15,13 +15,13 @@ export default function Principal() {
           {/* <nav>
             <ul className="flex justify-center space-x-8 text-3xl">
               <li>
-                <Link href='/home/safedrive' className="hover:text-gray-300">SafeDrive</Link>
+                <Link href={'/SafeDrive'} className="hover:text-gray-300">SafeDrive</Link>
               </li>
               <li>
-                <Link href='/home/cliente' className="hover:text-gray-300">Clientes</Link>
+                <Link href={'/Cliente'} className="hover:text-gray-300">Clientes</Link>
               </li>
               <li>
-                <Link href='/home/recomendacao' className="hover:text-gray-300">Recomendações</Link>
+                <Link href={'/Recomendacao'} className="hover:text-gray-300">Recomendações</Link>
               </li>
             </ul>
         </nav> */}
