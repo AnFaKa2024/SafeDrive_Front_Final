@@ -3,7 +3,9 @@
 import RodapeCad from "@/components/RodapeCad";
 import DadosCondutor from "./DadosCondutor";
 import DadosPessoais from "./DadosPessoais";
-import Link from "next/link";
+import carro from "../../imagens/carro.png"
+import Link from "next/link"
+import Image from "next/image"
 import { FaHome } from "react-icons/fa";
 
 
@@ -56,6 +58,13 @@ export default function CadUsuario(){
             EndCondutor={valorDoEndereco}/>  
           
         </form>
+
+      <section className="p-4 bg-white hover:bg-indigo-50  shadow-md rounded-lg text-center">
+        <h2 className="text-xl font-semibold mb-2">CADASTRO DE VEÍCULO</h2>
+        <Link href={'/CadVeiculo'}>
+          <Image src={carro} className="mx-auto w-16" alt="Veículo" />
+        </Link>
+      </section>
       </main>   
       
       <RodapeCad/> 
