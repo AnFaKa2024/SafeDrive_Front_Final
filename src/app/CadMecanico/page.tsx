@@ -3,8 +3,7 @@
 import RodapeCad from "@/components/RodapeCad";
 import CadOficina from "./CadOficina";
 import CadMeca from "./CadMeca";
-import Link from "next/link";
-import { FaHome } from "react-icons/fa";
+
 
 export default function CadMecanico(){
 
@@ -22,11 +21,6 @@ const valorDosAnos = 10;
 
   <>
      
-      <header className="flex items-center justify-end p-4" >
-        <Link href="/" className= "botao-voltar-home -mt-24 text-white text-5xl "><FaHome className="" /></Link>
-      </header>
-
-
     <CadMeca  Nome={valorDoNome}
       DN={valorDaDataNascimento}
       Status={valorDoStatus}

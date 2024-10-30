@@ -22,5 +22,5 @@ export default function Menu(){
   )
 }
 
-// ajustar os nomes das paginas
+
 

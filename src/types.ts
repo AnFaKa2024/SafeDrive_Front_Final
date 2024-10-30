@@ -2,11 +2,10 @@
 export type CondutorProps ={
   Sim: boolean;
   Nao: boolean;
-  Cnh: string | number;  
+  Cnh: number;  
   NomeCondutor: string;
   DN: Date;
   Status: string;
-  Doc: number;
   EndCondutor: string;
 }
 

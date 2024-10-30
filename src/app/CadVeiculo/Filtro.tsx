@@ -6,21 +6,21 @@ export default function Filtro({FiltroAr, FiltroMotor, FiltroCombustivel}: Filtr
 
   return(
   
-    <section className="bg-indigo-100 p-6 rounded-lg shadow-sm">
+    <section className="bg-indigo-100 p-6 ">
     
-      <h2 className="text-xl text-indigo-950 text-center font-semibold mb-4"><b>ÚLTIMA TROCA DE FILTRO</b></h2>
+      <h2 className="text-2xl text-indigo-950 text-center mb-4"><b>ÚLTIMA TROCA DE FILTRO</b></h2>
 
       <div className="flex justify-evenly"> 
         <div>
-          <label htmlFor="idAr" className="block text-center text-indigo-950 mb-2">Filtro do Ar</label> <input type="date" className="text-center border rounded border-indigo-400" name="FiltroAr" id="idAr" required />
+          <label htmlFor="idAr" className="block text-center text-2xl text-indigo-950 mb-2">Filtro do Ar</label> <input type="date" className="text-center border rounded border-indigo-400" name="FiltroAr" id="idAr" required />
         </div>
         
         <div>
-          <label htmlFor="idMotor" className="block text-center text-indigo-950 mb-2">  Filtro do Motor</label> <input type="date" className="text-center border rounded border-indigo-400" name="FiltroMotor" id="idMotor" required />
+          <label htmlFor="idMotor" className="block text-center text-2xl text-indigo-950 mb-2">  Filtro do Motor</label> <input type="date" className="text-center border rounded border-indigo-400" name="FiltroMotor" id="idMotor" required />
         </div>
         
         <div>
-          <label htmlFor="idCombu" className="block text-center text-indigo-950 mb-2">  Filtro do Combustível</label> <input type="date" className="text-center border rounded border-indigo-400" name="FiltroCombustivel" id="idCombu" required />
+          <label htmlFor="idCombu" className="block text-center text-2xl text-indigo-950 mb-2">  Filtro do Combustível</label> <input type="date" className="text-center border rounded border-indigo-400" name="FiltroCombustivel" id="idCombu" required />
         </div>
       </div>
       <br />

@@ -1,3 +1,4 @@
+import CabecalhoAcesso from '@/components/CabecalhoAcesso';
 import Link from 'next/link';
 
 export default function Login() {
@@ -8,6 +9,8 @@ export default function Login() {
   const handleCadastro = () => {
     alert('Faça seu cadastro');
   };
+
+  <CabecalhoAcesso/>
 
   return (
     <main className="flex flex-col items-center justify-center shadow-md rounded-lg mt-15 p-4 m-1 bg-indigo-700">

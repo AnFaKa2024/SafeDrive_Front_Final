@@ -6,13 +6,14 @@ export default function CadVeic({Categoria, Placa}:DadosVeiculoProps){
 
   return(
 
-  
-      <main className="bg-indigo-100 p-3 rounded-lg shadow-sm">
-        <h2 className="text-xl text-center text-indigo-950 font-semibold mb-4"><b>DADOS DO VEÍCULO</b></h2>
+      <>
+      
+      <main className="bg-indigo-100 p-2 rounded-lg shadow-sm">
+      <h1 className="text-center mt-2 text-3xl  text-indigo-950"><b>DADOS DO VEÍCULO</b></h1>
        
         <div className="flex justify-evenly">
           <div>
-            <label htmlFor="idCat" className="block text-indigo-950 text-center mb-2"><b>Qual a Categoria?</b></label>
+            <label htmlFor="idCat" className="block text-indigo-950 text-2xl text-center mb-2"><b>Qual a Categoria?</b></label>
               <select name="categoria" id="idCat" className="w-25 p-2 mb-4 border rounded border-indigo-400">
                 <option value=" " disabled selected>Selecione uma Categoria</option>
                 <option value='Carro'> Carro</option>
@@ -23,7 +24,7 @@ export default function CadVeic({Categoria, Placa}:DadosVeiculoProps){
           </div>
             
           <div>
-            <label htmlFor="idPlaca" className="block text-indigo-950 text-center  mb-2"><b>Placa do Veículo</b></label>
+            <label htmlFor="idPlaca" className="block text-indigo-950 text-center text-2xl mb-2"><b>Placa do Veículo</b></label>
             <input type="text" name='Placa' id="idPlaca" className="w-25 p-2 mb-4 hover:bg-indigo-50 border rounded border-indigo-400"/>
           </div>
         </div>
@@ -45,7 +46,7 @@ export default function CadVeic({Categoria, Placa}:DadosVeiculoProps){
         </div>
         
       </main>
-   
+      </>
 
   )
 }

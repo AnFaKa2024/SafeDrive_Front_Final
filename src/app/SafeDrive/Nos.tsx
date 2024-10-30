@@ -15,21 +15,21 @@ export default function Nos(){
         <h1 className="text-2xl font-bold text-indigo-950 mr-8">DESENVOLVEDORAS</h1>
 
         {/* Grupo de cada desenvolvedora com turma, foto, nome e RM */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col gap-4 items-center ">
           <p className="text-lg font-semibold text-indigo-950"><b>Turma: 1TDSPI</b></p>
           <Image src={Fernanda} alt="Fernanda" />
           <h2 className="text-xl font-semibold text-indigo-950">Fernanda Seda</h2>
           <h3 className="text-indigo-950">RM 558274</h3>
         </div>
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col gap-4  items-center ">
           <p className="text-lg font-semibold text-indigo-950"><b>Turma: 1TDSPI</b></p>
           <Image src={Karen} alt="Karen" />
           <h2 className="text-xl font-semibold text-indigo-950">Karen Marques</h2>
           <h3 className="text-indigo-950">RM 554556</h3>
         </div>
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col gap-4 items-center ">
           <p className="text-lg font-semibold text-indigo-950"><b>Turma: 1TDSA</b></p>
           <Image src={Giovanna} alt="Giovanna" />
           <h2 className="text-xl font-semibold text-indigo-950">Giovanna Laturague Bueno</h2>

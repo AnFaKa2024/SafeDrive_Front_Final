@@ -21,6 +21,7 @@ export default function Relatorio() {
 
       <main className="p-3 m-1 mt-3 text-center text-indigo-200 shadow-md rounded-lg">
         
+        
         <div className="  mt-8">
           <h2 className="text-3xl text-center text-indigo-950 mb-4"><b>RELATÓRIO DE DIAGNÓSTICO</b></h2>
           

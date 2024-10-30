@@ -3,9 +3,9 @@ import { CondutorProps } from "@/types"
 import { FaCheck, FaTrash } from 'react-icons/fa';
 
 
-export default function DadosCondutor({ Sim, Nao, Cnh, NomeCondutor, DN, Status, Doc, EndCondutor }: CondutorProps) {
+export default function DadosCondutor({ Sim, Nao, Cnh, NomeCondutor, DN, Status, EndCondutor }: CondutorProps) {
   return (
-    <main className="p-3 m-1 bg-indigo-100 rounded-lg shadow-lg ">
+    <main className="p-3 m-1 bg-indigo-200 rounded-lg shadow-lg ">
       <h2 className="text-xl font-bold mb-4 text-center text-gray-800">DADOS DO CONDUTOR</h2>
 
       <h3 className="text-lg font-semibold text-indigo-950 mb-2">São os mesmos dados cadastrados do usuário?</h3>

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import LogoAtu from '../../imagens/LogoAtu.png'
+import carro from '../../imagens/carro.png'
 import clientes from '../../imagens/clientes.png'
 import recomendacao from '../../imagens/recomendacao.png'
 import orcSfundo from '../../imagens/orcSfundo.png'
@@ -62,6 +63,13 @@ export default function Corpo() {
             <Image src={reclamacao} className="mx-auto w-16" alt="Feedback" />
           </Link>
         </section>
+
+        <section className="p-4 bg-white hover:bg-indigo-50  shadow-md rounded-lg text-center">
+        <h2 className="text-xl font-semibold mb-2">CADASTRO DE VEÍCULO</h2>
+        <Link href={'/CadVeiculo'}>
+          <Image src={carro} className="mx-auto w-16" alt="Veículo" />
+        </Link>
+      </section>
 
       </div>
     </main>

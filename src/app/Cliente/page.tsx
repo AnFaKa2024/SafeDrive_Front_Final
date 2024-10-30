@@ -12,7 +12,7 @@ export default function Cliente(){
     
     <>
         <header className="flex items-center justify-end p-4" >
-          <Link href="/" className= "botao-voltar-home -mt-24 text-white text-5xl "><FaHome className="" /></Link>
+          <Link href="/Home" className= "botao-voltar-home -mt-24 text-white text-5xl "><FaHome className="" /></Link>
         </header>
                 
           <main className='p-3 m-1'>

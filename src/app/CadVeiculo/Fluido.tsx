@@ -7,22 +7,22 @@ export default function Fluido({OleoMotor, OleoFreio, AguaRadiador}: FluidoProps
   return(
     <section className="bg-indigo-100 p-6 rounded-lg shadow-sm">
     
-      <h2 className="text-xl text-center text-bold text-indigo-950 font-semibold mb-4"><b>ÚLTIMA TROCA DE FLÚIDOS</b></h2>
+      <h2 className="text-2xl text-center text-bold text-indigo-950 mb-4"><b>ÚLTIMA TROCA DE FLÚIDOS</b></h2>
     
       <div className= "flex justify-evenly">
       
         <div>
-          <label htmlFor="idmotor" className="block text-center mb-2 text-indigo-950"> Óleo do Motor</label>  
+          <label htmlFor="idmotor" className="block text-center text-2xl mb-2 text-indigo-950"> Óleo do Motor</label>  
           <input type="date" className="text-center text-indigo-950 border rounded border-indigo-400" id="idmotor" required />
         </div>
         
         <div>
-          <label htmlFor="idmotor" className="block text-center mb-2 text-indigo-950"> Óleo do Freio</label> 
+          <label htmlFor="idmotor" className="block text-center text-2xl mb-2 text-indigo-950"> Óleo do Freio</label> 
           <input type="date" className="text-center text-indigo-950 border rounded border-indigo-400" id="idmotor" required />
         </div>
         
         <div>
-          <label htmlFor="idmotor" className="block text-center mb-2 text-indigo-950"> Água do Radiador</label>  
+          <label htmlFor="idmotor" className="block text-center text-2xl mb-2 text-indigo-950"> Água do Radiador</label>  
           <input type="date" className="text-center text-indigo-950 border rounded border-indigo-400"  id="idmotor" required />
         </div>
             

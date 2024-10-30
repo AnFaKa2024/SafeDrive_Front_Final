@@ -24,17 +24,17 @@ export default function CadVeiculo() {
 
   return (
     <>
-        <header className="flex items-center justify-end p-4" >
-          <Link href="/" className= "botao-voltar-home -mt-24 text-white text-5xl "><FaHome className="" /></Link>
-        </header>
+      <header className="flex items-center justify-end p-4" >
+        <Link href="/Home" className= "botao-voltar-home -mt-24 text-white text-5xl "><FaHome className="" /></Link>
+      </header>
 
       <main className=" bg-indigo-200 p-3 m-1 rounded-lg shadow-md text-indigo-950  text-center mt-3 font-bold">
         
         <h1 className="text-3xl">CADASTRE O VEÍCULO</h1>
-        
+        <br />
         <p className="text-xl">Preencha os campos com os dados do veículo</p>
 
-        <form className="bg-white p-8 shadow-md rounded-lg space-y-6">
+        <form className=" p-8 shadow-md rounded-lg space-y-1">
           <DadosVeiculo 
             Categoria={valorDaCategoria}
             Placa={valorDaPlaca}/>

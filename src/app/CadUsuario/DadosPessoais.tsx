@@ -1,32 +1,28 @@
 
 import { PessoaisProps } from "@/types";
 import { FaCheck, FaTrash } from 'react-icons/fa';
-import { useRouter } from "next/router";
+
 
 
 
 export default function DadosPessoais({Nome, DN, Doc, Login, End, Senha}: PessoaisProps){
 
-  // const router = useRouter();
-
-  // const irParaCadastroVeiculo = () => {
-  //   router.push('/cadastro-veiculo');
-  // }
+  
 
   return(
       <>
       
       <div>
-        <h1 className="text-center -mt-5 text-3xl  text-indigo-950"><b>CADASTRO USUÁRIO</b></h1>
       </div>
 
-      <main className="bg-indigo-100 p-3 m-1 mt-2 rounded-lg shadow-sm space-x-4">
+      <main className="bg-indigo-200 p-3 m-1 rounded-lg shadow-md text-indigo-950  text-center mt-3 font-bold">
+        <h1 className="text-center mt-2 text-3xl  text-indigo-950"><b>CADASTRO USUÁRIO</b></h1>
         
-        <h2 className="text-xl text-center text-indigo-950 mb-4"><b>DADOS PESSOAIS</b></h2>
+        <h2 className="text-xl mt-2 text-center text-indigo-950 mb-4"><b>DADOS PESSOAIS</b></h2>
         
         {/* NOME */}
         <div>
-          <label htmlFor="Nome"  className="block text-indigo-950 font-semibold text-lg mb-2">Nome </label>
+          <label htmlFor="Nome"  className="block text-justify text-indigo-950 font-semibold text-lg mb-2">Nome </label>
           <input type="text" className="w-full p-2 mb-4 border rounded border-indigo-400 hover:bg-indigo-50" name="name" placeholder="Nome Completo" id={Nome? 'idNome' : undefined} required /><br />
         </div>
         <br />
@@ -101,13 +97,13 @@ export default function DadosPessoais({Nome, DN, Doc, Login, End, Senha}: Pessoa
         <br />
         <br />
         {/* LOGIN E SENHA */}
-        <p className="text-lg text-indigo-950 font-bold mb-2"><b>CADASTRO DE LOGIN E SENHA</b></p>
+        <p className="text-2xl text-indigo-950 mb-2"><b>CADASTRO DE LOGIN E SENHA</b></p>
         
-        <div className=" flex flex-wrap gap-4 mb-4">
-          <label htmlFor="Login" className="block text-indigo-950 text-lg mb-2">Login (deve conter apenas 6 caracteres) <input type="text" className="w-32 p-2 mb-4 border rounded border border-indigo-400 hover:bg-indigo-50" name="login" id={Login? "idLogin": undefined}  required/></label><br />
-          <label htmlFor="Login" className="block text-indigo-950 text-lg mb-2">Confirmar Login (deve conter apenas 6 caracteres) <input type="text" className="w-32 p-2 mb-4 border rounded border border-indigo-400 hover:bg-indigo-50" name="login" id={Login? "idLogin": undefined}  required/></label><br />
-          <label htmlFor="idSenha" className="block text-indigo-950 text-lg mb-2">Senha (deve conter apenas 6 caracteres) <input type="password" className="w-32 p-2 mb-4 border rounded border border-indigo-400 hover:bg-indigo-50" name="senha" id={ Senha ? "idSenha": undefined}  required/></label> 
-          <label htmlFor="idSenha" className="block text-indigo-950 text-lg mb-2">Confirmar Senha (deve conter apenas 6 caracteres) <input type="password" className="w-32 p-2 mb-4 border rounded border border-indigo-400 hover:bg-indigo-50" name="senha" id={ Senha ? "idSenha": undefined}  required/></label> 
+        <div className=" flex flex-col2 gap-4 mb-4">
+          <label htmlFor="Login" className="block text-indigo-950 text-lg mb-2">Login (E-mail ex. safedrive@safedrive.com) <input type="text" className="w-32 p-2 mb-4 rounded border border-indigo-400 hover:bg-indigo-50" name="login" id={Login? "idLogin": undefined}  required/></label><br />
+          <label htmlFor="Login" className="block text-indigo-950 text-lg mb-2">Confirmar Login (E-mail ex. safedrive@safedrive.com) <input type="text" className="w-32 p-2 mb-4 rounded border border-indigo-400 hover:bg-indigo-50" name="login" id={Login? "idLogin": undefined}  required/></label><br />
+          <label htmlFor="idSenha" className="block text-indigo-950 text-lg mb-2">Senha (deve conter apenas 6 caracteres) <input type="password" className="w-32 p-2 mb-4 rounded border border-indigo-400 hover:bg-indigo-50" name="senha" id={ Senha ? "idSenha": undefined}  required/></label> 
+          <label htmlFor="idSenha" className="block text-indigo-950 text-lg mb-2">Confirmar Senha (deve conter apenas 6 caracteres) <input type="password" className="w-32 p-2 mb-4 rounded border border-indigo-400 hover:bg-indigo-50" name="senha" id={ Senha ? "idSenha": undefined}  required/></label> 
         </div>
 
           <div className="flex justify-evenly">
@@ -125,15 +121,7 @@ export default function DadosPessoais({Nome, DN, Doc, Login, End, Senha}: Pessoa
               <FaTrash className="mr-2" /> Limpar Informações
             </button>
           </div>
-        
-        
-          {/* Botão para redirecionar */}
-          {/* <button
-            onClick={irParaCadastroVeiculo}
-            className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">
-            Ir para Cadastro de Veículo
-          </button> */}
-                                                                                                                      
+                                                                                                                                      
       </main>
   
     </>
