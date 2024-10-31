@@ -45,6 +45,15 @@ export default function DadosPessoais({Nome, DN, Doc, Login, End, Senha}: Pessoa
             <input type="text" className="w-46 p-2 mb-4 border rounded border-indigo-400 hover:bg-indigo-50" name="doc" placeholder="CFP ou CNPJ" id={Doc? "idDoc": undefined} required />
           </div>
         </div>
+
+        {/* CNH */}
+        <div className="flex space-x-20">
+          
+          <div className="flex justify-evenly space-x-2 items-center">
+            <label htmlFor="idDoc" className="block font-semibold text-indigo-950 text-lg mb-2"> Digite o número do documento</label> 
+            <input type="text" className="w-46 p-2 mb-4 border rounded border-indigo-400 hover:bg-indigo-50" name="Cnh" placeholder="CNH" id={Doc? "idCNH": undefined} required />
+          </div>
+        </div>
         <br />
         
         {/* ENDEREÇO */}

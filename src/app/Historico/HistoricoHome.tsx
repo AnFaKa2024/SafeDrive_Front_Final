@@ -1,7 +1,6 @@
-"use client"
 
-import Cabecalho from "../../components/Cabecalho";
-import Rodape from "../../components/Rodape";
+
+
 import { useState } from "react";
 import { NovoCondProps } from "../../types";
 

@@ -1,11 +1,11 @@
+"use client"
 
-import { useState } from "react";
-import { useRouter } from "next/router";
+import { useState } from "react"
 import { FaSave } from "react-icons/fa";
 
 export default function RodapeCad() {
   const [isSaved, setIsSaved] = useState(false);
-  const router = useRouter()
+  
   
   const handleSave = () => {
     // Ações de salvar, por exemplo, enviar dados para o servidor
@@ -15,7 +15,7 @@ export default function RodapeCad() {
 
   const handleGoHome = () => {
     if (isSaved) {
-      router.push("/Home"); // Redireciona para a página inicial
+      window.location.href ="/Home" // Redireciona para a página inicial
     }
   }
 

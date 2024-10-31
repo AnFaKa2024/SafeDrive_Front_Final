@@ -2,7 +2,6 @@
 
 import RodapeCad from "@/components/RodapeCad";
 import DadosPessoais from "./DadosPessoais";
-import DadosCondutor from "../CadCondutor/DadosCondutor";
 import Link from "next/link"
 import { FaHome } from "react-icons/fa";
 
@@ -18,10 +17,7 @@ export default function CadUsuario(){
   const valorDaSenha = "senhaSegura";
   const valorDoLogin = "joaoLogin";
   const valorDosAnos = 10;
-  const valorDoSim = true;
-  const valorDoNao = false;
-  const valorDoCnh = 123456789;
-  const valorDoNomeCondutor = "João";
+  
   
   
     
@@ -46,16 +42,6 @@ export default function CadUsuario(){
             Login={valorDoLogin}
             Anos={valorDosAnos}/>
 
-          <DadosCondutor
-            Sim={valorDoSim}
-            Nao={valorDoNao}
-            Cnh={valorDoCnh}  
-            NomeCondutor={valorDoNomeCondutor}
-            DN={valorDaDataNascimento}
-            Status={valorDoStatus}
-            EndCondutor={valorDoEndereco}/> 
-          
-          
           
         </form>
 

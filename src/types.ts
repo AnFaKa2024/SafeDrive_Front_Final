@@ -1,14 +1,3 @@
-
-export type CondutorProps ={
-  Sim: boolean;
-  Nao: boolean;
-  Cnh: number;  
-  NomeCondutor: string;
-  DN: Date;
-  Status: string;
-  EndCondutor: string;
-}
-
 export type PessoaisProps ={
   Nome: string;
   DN: Date;
@@ -62,6 +51,18 @@ export type BotoesProps ={
   BotaoEnviar: Function; 
 }
 
+
+
+
+// export type CondutorProps ={
+//   Sim: boolean;
+//   Nao: boolean;
+//   Cnh: number;  
+//   NomeCondutor: string;
+//   DataNascimento: Date;
+//   Status: string;
+//   EndCondutor: string;
+// }
 
 
 

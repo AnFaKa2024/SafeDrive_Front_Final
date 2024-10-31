@@ -1,4 +1,35 @@
-export default function(){
+import { useState } from 'react';
+
+interface InfoVeiculoProps {
+  onSubmit?: (data: any) => void;
+}
+
+interface FormData {
+  km: string;
+  pneu: string;
+  pneuT: string;
+  pneusTrocados: {
+    dianteiroDireito: boolean;
+    dianteiroEsquerdo: boolean;
+    traseiroDireito: boolean;
+    traseiroEsquerdo: boolean;
+  };
+  datatroca: string;
+}
+
+export default function InfoVeiculo({ onSubmit }: InfoVeiculoProps) {
+  const [formData, setFormData] = useState<FormData>({
+    km: '',
+    pneu: '',
+    pneuT: '',
+    pneusTrocados: {
+      dianteiroDireito: false,
+      dianteiroEsquerdo: false,
+      traseiroDireito: false,
+      traseiroEsquerdo: false
+    },
+    datatroca: ''
+  });
 
   return(
     <div className="container mx-auto px-4 py-8">
@@ -7,9 +38,10 @@ export default function(){
       
         <h1 className="text-3xl text-center font-bold mb-4 text-indigo-950"><strong>Por que pedimos informações do veículo?</strong></h1>
         
-        <p className="text-indigo-950 text-xl text-center mb-2" > Com intuido de prestar o melhor serviço aos nossos clientes, necessitamos
-          saber das manuteções realizadas e quando foram feitas, assim como precisamos saber 
-          sobre trocas de baterias e quais quer outras manuteções e consertos realizados no veículo.
+        <p className="text-indigo-950 text-xl text-center mb-2">
+          Com intuito de prestar o melhor serviço aos nossos clientes, necessitamos
+          saber das manutenções realizadas e quando foram feitas, assim como precisamos saber 
+          sobre trocas de baterias e quaisquer outras manutenções e consertos realizados no veículo.
         </p>
     
       </main>
@@ -30,7 +62,12 @@ export default function(){
 
         <div>
           <label htmlFor="idpneuT" className="block text-lg text-indigo-950 font-medium mb-2"> Já trocou os pneus? </label>
-          <select name="pneuT" id="idpneuT" className="w-20 px-4 py-2 border border-indigo-400 rounded-lg focus:outline-none focus:border-indigo-500">
+          <select 
+            name="pneuT" 
+            id="idpneuT" 
+            defaultValue=""
+            className="w-full px-4 py-2 border border-indigo-400 rounded-lg focus:outline-none focus:border-indigo-500"
+          >
             <option value="" disabled> Selecione uma opção </option>
             <option value="Sim">Sim</option>
             <option value="Não">Não</option>
@@ -41,24 +78,24 @@ export default function(){
         
         <div className="flex flex-wrap mb-2">
 
-        <div className="flex items-center w-1/2 mb-2">
-          <label htmlFor="idDd" className=" text-lg">Dianteiro - direito</label>
-          <input type="checkbox" name="Dianteiro - direito" id="idDd" />
+        <div className="flex items-center w-1/2 mb-2 space-x-2">
+          <input type="checkbox" name="Dianteiro - direito" id="idDd" className="mr-2" />
+          <label htmlFor="idDd" className="text-lg">Dianteiro - direito</label>
         </div>
         
-        <div className="flex items-center w-1/2 mb-2">
-          <label htmlFor="idTd" className=" text-lg">Traseiro - direito</label>
-          <input type="checkbox" name="Traseiro - direito" id="idTd" />
+        <div className="flex items-center w-1/2 mb-2 space-x-2">
+          <input type="checkbox" name="Traseiro - direito" id="idTd" className="mr-2" />
+          <label htmlFor="idTd" className="text-lg">Traseiro - direito</label>
         </div>
           
-        <div className="flex items-center w-1/2 mb-2">
-          <label htmlFor="idDe" className=" text-lg">Dianteiro - Esquerdo</label>
-          <input type="checkbox" name="Dianteiro - Esquerdo" id="idDe" />
+        <div className="flex items-center w-1/2 mb-2 space-x-2">
+          <input type="checkbox" name="Dianteiro - Esquerdo" id="idDe" className="mr-2" />
+          <label htmlFor="idDe" className="text-lg">Dianteiro - Esquerdo</label>
         </div>
           
-        <div className="flex items-center w-1/2 mb-2">
-          <label htmlFor="idTe" className=" text-lg">Traseiro - Esquerdo</label>
-          <input type="checkbox" name="Traseiro - Esquerdo" id="idTe" />
+        <div className="flex items-center w-1/2 mb-2 space-x-2">
+          <input type="checkbox" name="Traseiro - Esquerdo" id="idTe" className="mr-2" />
+          <label htmlFor="idTe" className="text-lg">Traseiro - Esquerdo</label>
         </div>
           
         </div>
@@ -67,7 +104,15 @@ export default function(){
             <input type="date" name="datatroca" id="iddataT" required className="px-4 py-2 border border-indigo-400 rounded-lg focus:outline-none focus:border-indigo-500"/>
           </div>
           
-          <button onClick={()=> alert ()} className="w-full bg-indigo-600 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700 focus:outline-none"> Confirmar Informações </button>
+          <button 
+            onClick={(e) => {
+              e.preventDefault();
+              onSubmit && onSubmit(formData);
+            }} 
+            className="w-full bg-indigo-600 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700 focus:outline-none"
+          > 
+            Confirmar Informações 
+          </button>
         </div>
       </section>
     </div>
