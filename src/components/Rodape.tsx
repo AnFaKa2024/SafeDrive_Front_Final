@@ -14,14 +14,14 @@ export default function Rodape() {
         <div className="flex-shrink-0 mr-4">
           <Image src={atendente} alt="assistente virtual" className="w-20 h-22 " />
         </div>
-        <h2 className="text-center text-lg font-semibold">
+        <h2 className="text-center text-4xl font-semibold">
           FALE CONOSCO ATRAVÉS DA NOSSA ASSISTENTE VIRTUAL
         </h2>
       </div>
   
       <div className="text-center">
-        <p className="text-xl mb-2">Contato</p>
-        <p className="text-m">
+        <p className="text-3xl mb-2"><b>Contato</b></p>
+        <p className="text-m text-2xl">
           e-mail: safedrive@atendimentosafedrive.com.br | +55 11 3456-6782
         </p>
       </div>

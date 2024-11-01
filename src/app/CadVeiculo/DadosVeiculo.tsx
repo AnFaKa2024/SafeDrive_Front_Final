@@ -7,7 +7,7 @@ export default function CadVeic({ Categoria, Placa, handleInputChange }: DadosVe
        
       <div className="flex justify-evenly">
         <div>
-          <label htmlFor="idCat" className="block text-indigo-950 text-2xl text-center mb-2"><b>Qual a Categoria?</b></label>
+          <label htmlFor="idCat" className="block text-indigo-950 text-2xl text-center mb-2">Qual a Categoria?</label>
           <select name="Categoria" id="idCat" className="w-25 p-2 mb-4 border rounded border-indigo-400" value={Categoria} onChange={handleInputChange}>
             <option value="" disabled selected>Selecione uma Categoria</option>
             <option value='Carro'>Carro</option>
@@ -18,7 +18,7 @@ export default function CadVeic({ Categoria, Placa, handleInputChange }: DadosVe
         </div>
             
         <div>
-          <label htmlFor="idPlaca" className="block text-indigo-950 text-center text-2xl mb-2"><b>Placa do Veículo</b></label>
+          <label htmlFor="idPlaca" className="block text-indigo-950 text-center text-2xl mb-2">Placa do Veículo</label>
           <input 
             type="text" 
             name='Placa' 

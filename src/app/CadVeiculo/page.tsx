@@ -1,10 +1,13 @@
 "use client"; 
-import { FaCheck} from 'react-icons/fa';
+import { FaCheck, FaTrash} from 'react-icons/fa';
 import { useState } from "react";
 import DadosVeiculo from "./DadosVeiculo";
 import Filtro from "./Filtro";
 import Fluido from "./Fluido";
+import Link from "next/link";
+import { FaHome } from "react-icons/fa";
 import { DadosVeiculoProps, FiltroProps, FluidoProps } from "@/types";
+import RodapeCad from '@/components/RodapeCad';
 
 export default function App() {
   const [dadosVeiculo, setDadosVeiculo] = useState<DadosVeiculoProps>({
@@ -57,6 +60,12 @@ export default function App() {
   };
 
   return (
+
+    <>
+      <header className="flex items-center justify-end p-4" >
+        <Link href="/Home" className= "botao-voltar-home -mt-24 text-white text-5xl "><FaHome className="" /></Link>
+      </header>
+     
     <div className="p-4">
       <DadosVeiculo 
         Categoria={dadosVeiculo.Categoria} 
@@ -82,7 +91,16 @@ export default function App() {
         >
           <FaCheck className="mr-2" />Confirmar Todos os Dados
         </button>
+
+        <button
+          className="w-56 bg-red-600 text-white py-2 mt-4 rounded flex items-center justify-center hover:bg-red-700"
+          onClick={() => alert('Informações Limpas!')}><FaTrash className="mr-2" /> Limpar Informações
+        </button>
+
       </div>
     </div>
-  );
+
+    <RodapeCad/>
+    </>
+  )
 }

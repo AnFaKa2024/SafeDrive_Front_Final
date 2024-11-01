@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { FaHome } from "react-icons/fa";
+
 
 import { useState } from "react";
 import { FaSave, FaEdit, FaTrash, FaPaperPlane } from "react-icons/fa"; // Ícones para as ações CRUD

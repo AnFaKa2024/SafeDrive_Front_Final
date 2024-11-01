@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
 import { RiSave3Fill } from 'react-icons/ri'
-import { FaTrash } from 'react-icons/fa';
 import CadMecanica from "./CadMeca";
 import CadOficina from "./CadOficina";
+import RodapeCad from "@/components/RodapeCad";
 
 interface MecanicoProps {
   id: number;
@@ -54,7 +54,10 @@ export default function Page() {
   };
 
   return (
-    <div>
+
+    <>
+    
+     <div className="mt-8">
 
       {/* Formulário de Mecânico */}
       <section className="mb-6">
@@ -65,14 +68,11 @@ export default function Page() {
         <CadOficina {...novaOficina} />
       </section>
       <div className="flex justify-evenly">
-        <button
-          onClick={adicionarMecanicoEOficina}
-          className="w-56 bg-blue-600 text-white py-2 mt-2 rounded flex items-center justify-center hover:bg-blue-700"
-        >
-          <RiSave3Fill className="mr-2" /> Salvar
-        </button>
+    
 
       </div>
     </div>
-  );
+    <RodapeCad/>
+    </>
+  )
 }

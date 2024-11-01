@@ -1,5 +1,5 @@
 import { FluidoProps } from "@/types";
-import { FaCheck, FaTrash } from 'react-icons/fa';
+
 
 export default function Fluido({ OleoMotor, OleoFreio, AguaRadiador, handleInputChange }: FluidoProps & { handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void }) {
   return (

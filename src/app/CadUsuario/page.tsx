@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import DadosPessoais from './DadosPessoais';
+import RodapeCad from "@/components/RodapeCad";
 
 // Definindo o tipo para os dados pessoais
 type PessoaisProps = {
@@ -42,6 +43,9 @@ export default function App() {
   };
 
   return (
+
+    <>
+    
     <div>
       <DadosPessoais 
         Nome={formData.Nome}
@@ -53,5 +57,9 @@ export default function App() {
         onSubmit={handleSubmit} // Para passar onSubmit como prop
       />
     </div>
-  );
+
+    <RodapeCad/>
+
+    </>
+  )
 }

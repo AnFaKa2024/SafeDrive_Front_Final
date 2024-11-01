@@ -1,5 +1,7 @@
 "use client"; 
 import { useState } from 'react';
+import Link from "next/link";
+import { FaHome } from "react-icons/fa";
 import { FaPlus, FaList } from 'react-icons/fa';
 
 export default function App() {
@@ -14,6 +16,12 @@ export default function App() {
   };
 
   return (
+    <>
+      <header className="flex items-center justify-end p-4" >
+        <Link href="/Home" className= "botao-voltar-home -mt-24 text-white text-5xl "><FaHome className="" /></Link>
+      </header>
+    
+
     <div className="p-6">
       <h1 className="text-3xl text-center -mt-5 mb-4"><b>ORÇAMENTO</b></h1>
 
@@ -60,5 +68,6 @@ export default function App() {
         </ul>
       </div>
     </div>
-  );
+    </>
+  )
 }

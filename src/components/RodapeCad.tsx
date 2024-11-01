@@ -34,7 +34,7 @@ export default function RodapeCad() {
       <button 
         onClick={handleGoHome} 
         className={`flex items-center py-2 px-4 rounded transition ${
-          isSaved ? "bg-green-600 text-white hover:bg-green-700" : "bg-gray-400 text-gray-700 cursor-not-allowed"
+          isSaved ? "bg-purple-600 text-white hover:bg-purple-700" : "bg-gray-400 text-gray-700 cursor-not-allowed"
         }`} 
         disabled={!isSaved}
       >

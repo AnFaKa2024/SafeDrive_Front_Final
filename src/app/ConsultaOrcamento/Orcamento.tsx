@@ -13,26 +13,26 @@ export default function Orcamento() {
   const handleAddItem = () => {
     if (item.trim() === '') return;
     if (editingIndex !== null) {
-      // const updatedItems = items.map((i, index) => (index === editingIndex ? item : i));
-      // setItems(updatedItems);
-      // setEditingIndex(null);
+      const updatedItems = items.map((i, index) => (index === editingIndex ? item : i));
+      setItems(updatedItems);
+      setEditingIndex(null);
     } else {
-      // setItems([...items, `${item} (${tipoDefeito})`]); // Adiciona o tipo de defeito
+      setItems([...items, `${item} (${tipoDefeito})`]); // Adiciona o tipo de defeito
     }
     setItem('');
   };
 
   // Função para editar um item
-  // const handleEditItem = (index) => {
-  //   setItem(items[index].split(' (')[0]); // Remove o tipo do item ao editar
-  //   setEditingIndex(index);
-  // };
+  const handleEditItem = (index) => {
+    setItem(items[index].split(' (')[0]); // Remove o tipo do item ao editar
+    setEditingIndex(index);
+  };
 
-  // Função para excluir um item
-  // const handleDeleteItem = (index) => {
-  //   const updatedItems = items.filter((_, idx) => idx !== index);
-  //   setItems(updatedItems);
-  // };
+  //Função para excluir um item
+  const handleDeleteItem = (index) => {
+    const updatedItems = items.filter((_, idx) => idx !== index);
+    setItems(updatedItems);
+  };
 
   // Função para listar itens
   const handleListItems = () => {

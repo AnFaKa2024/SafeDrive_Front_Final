@@ -1,5 +1,5 @@
 import { FiltroProps } from "@/types";
-import { FaCheck, FaTrash } from 'react-icons/fa';
+
 
 export default function Filtro({ FiltroAr, FiltroMotor, FiltroCombustivel, handleInputChange }: FiltroProps & { handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void }) {
   return (

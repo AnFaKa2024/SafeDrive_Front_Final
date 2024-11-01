@@ -1,4 +1,7 @@
 "use client"; 
+
+import Link from "next/link";
+import { FaHome } from "react-icons/fa";
 import { useState } from "react";
 import { FaSave, FaEdit, FaTrash, FaPaperPlane } from "react-icons/fa";
 
@@ -47,6 +50,10 @@ export default function EditarEndereco() {
 
   return (
     <>
+      <header className="flex items-center justify-end p-4 ">
+        <Link href="/Home" className="text-white text-5xl -mt-24 hover:text-indigo-200 transition-colors"><FaHome /></Link>
+      </header>
+
       <div>
         <h1 className="text-3xl text-center -mt-0 mb-4 text-indigo-950">
           <b>EDITAR ENDEREÇO</b>
