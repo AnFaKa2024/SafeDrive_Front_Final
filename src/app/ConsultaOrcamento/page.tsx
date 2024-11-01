@@ -3,15 +3,14 @@ import { useState } from 'react';
 import { FaPlus, FaList } from 'react-icons/fa';
 
 export default function App() {
-  const [item, setItem] = useState('');  // Item sendo digitado
-  const [items, setItems] = useState<string[]>([]);  // Lista de itens adicionados
-  const [tipoDefeito, setTipoDefeito] = useState('pneu'); // Tipo de defeito selecionado
+  const [item, setItem] = useState('');  
+  const [items, setItems] = useState<string[]>([]);  
+  const [tipoDefeito, setTipoDefeito] = useState('pneu'); 
 
-  // Função para adicionar um item à lista
   const handleAddItem = () => {
-    if (item.trim() === '') return; // Impede a adição de item vazio
-    setItems([...items, `${item} (${tipoDefeito})`]); // Adiciona o item junto com o tipo de defeito
-    setItem(''); // Limpa o campo de entrada
+    if (item.trim() === '') return; 
+    setItems([...items, `${item} (${tipoDefeito})`]); 
+    setItem(''); 
   };
 
   return (
