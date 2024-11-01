@@ -2,18 +2,16 @@
 import { PessoaisProps } from "@/types";
 import { FaCheck, FaTrash } from 'react-icons/fa';
 
+type DadosPessoaisProps = PessoaisProps & {
+  onSubmit: () => void; // Pro botão daqui funcionar pra salvar
+};
 
-
-
-export default function DadosPessoais({Nome, DN, Doc, Login, End, Senha}: PessoaisProps){
+export default function DadosPessoais({Nome, DN, Doc, Login, End, Senha, onSubmit}: DadosPessoaisProps){
 
   
 
   return(
       <>
-      
-      <div>
-      </div>
 
       <main className="bg-indigo-200 p-3 m-1 rounded-lg shadow-md text-indigo-950  text-center mt-3 font-bold">
         <h1 className="text-center mt-2 text-3xl  text-indigo-950"><b>CADASTRO USUÁRIO</b></h1>
@@ -116,12 +114,12 @@ export default function DadosPessoais({Nome, DN, Doc, Login, End, Senha}: Pessoa
         </div>
 
           <div className="flex justify-evenly">
-            <button
-              className="w-56 bg-green-600 text-white py-2 mt-2 rounded flex items-center justify-center hover:bg-green-700"
-              onClick={() => alert('Confirmado!')}
-            >
-              <FaCheck className="mr-2" /> Confirmar Informações
-            </button>
+          <button
+            className="w-56 bg-green-600 text-white py-2 mt-2 rounded flex items-center justify-center hover:bg-green-700"
+            onClick={onSubmit} // Usando a prop onSubmit para a ação do botão
+          >
+            <FaCheck className="mr-2" /> Confirmar Informações
+          </button>
             
             <button
               className="w-56 bg-red-600 text-white py-2 mt-2 rounded flex items-center justify-center hover:bg-red-700"

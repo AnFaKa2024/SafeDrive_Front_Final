@@ -1,55 +1,57 @@
-"use client"
+"use client"; 
 
-import RodapeCad from "@/components/RodapeCad";
-import DadosPessoais from "./DadosPessoais";
-import Link from "next/link"
-import { FaHome } from "react-icons/fa";
+import React, { useState } from 'react';
+import DadosPessoais from './DadosPessoais';
 
+// Definindo o tipo para os dados pessoais
+type PessoaisProps = {
+  Nome: string;
+  DN: string;
+  Doc: number;
+  Login: string;
+  End: string;
+  Senha: string;
+};
 
+export default function App() {
+  const [formData, setFormData] = useState<PessoaisProps>({
+    Nome: '',
+    DN: '',
+    Doc: 0,
+    Login: '',
+    End: '',
+    Senha: ''
+  });
 
-export default function CadUsuario(){
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({ ...prevState, [name]: value }));
+  };
 
-  const valorDoNome = "João";
-  const valorDaDataNascimento = new Date("1990-10-02");
-  const valorDoStatus = "Ativo";
-  const valorDoDocumento = 123456789;
-  const valorDoEndereco = "Rua Exemplo, 123";
-  const valorDaSenha = "senhaSegura";
-  const valorDoLogin = "joaoLogin";
-  const valorDosAnos = 10;
-  
-  
-  
-    
-  return(
-    <>
-     
-      <header className="flex items-center justify-end p-4" >
-        <Link href="/Home" className= "botao-voltar-home -mt-24 text-white text-5xl "><FaHome className="" /></Link>
-      </header>
+  const handleSubmit = () => {
+    console.log("Dados adicionados:", formData);
+    alert("Dados adicionados com sucesso!");
+    setFormData({
+      Nome: '',
+      DN: '',
+      Doc: 0,
+      Login: '',
+      End: '',
+      Senha: ''
+    });
+  };
 
-
-      <main>
-        
-        <form action="cadastro cliente" method="get">
-          <DadosPessoais
-            Nome={valorDoNome}
-            DN={valorDaDataNascimento}
-            Status={valorDoStatus}
-            Doc={valorDoDocumento}
-            End={valorDoEndereco}
-            Senha={valorDaSenha}
-            Login={valorDoLogin}
-            Anos={valorDosAnos}/>
-
-          
-        </form>
-
-     
-      </main>   
-      
-      <RodapeCad/> 
-   
-    </>
-  )
+  return (
+    <div>
+      <DadosPessoais 
+        Nome={formData.Nome}
+        DN={formData.DN}
+        Doc={formData.Doc}
+        Login={formData.Login}
+        End={formData.End}
+        Senha={formData.Senha}
+        onSubmit={handleSubmit} // Para passar onSubmit como prop
+      />
+    </div>
+  );
 }
